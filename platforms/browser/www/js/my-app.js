@@ -170,12 +170,12 @@ function fileSystemCallback2(fs)
   var image = document.getElementById('myImage5');
 image.src = "newPersistentFile.txt";
   console.log('file system open: ' + fs.name);
-  fs.root.getFile("newPersistentFile.txt", fileSystemOptionals, getFileCallback2, onError);
+  fs.root.getFile("newPersistentFile.jpg", fileSystemOptionals, getFileCallback2, onError);
 }
 
 function getFileCallback2(entry){
   var image = document.getElementById('myImage5');
-  image.src = "newPersistentFile.txt";
+  image.src = "newPersistentFile.jpg";
 }
  
 
