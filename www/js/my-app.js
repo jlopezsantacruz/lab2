@@ -92,6 +92,7 @@ function fileSystemCallback(fs){
   // Opening/creating the file
   fs.root.getFile(fileToCreate, fileSystemOptionals, getFileCallback, onError);
 
+
 }
  
 var fileSystemOptionals = { create: true, exclusive: false };
@@ -160,24 +161,24 @@ function readFile(fileEntry) {
 function printFile(){
   console.log("entryprintfile");
 
+  window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemCallback2, onError);
+
+}
+
+function fileSystemCallback2(fs)
+{
+  var image = document.getElementById('myImage5');
+image.src = "newPersistentFile.txt";
   console.log('file system open: ' + fs.name);
+  fs.root.getFile("newPersistentFile.txt", fileSystemOptionals, getFileCallback2, onError);
+}
 
-  window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
-    //window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemCallback, onError);
-
-    console.log('file system open: ' + fs.name);
-    fs.root.getFile("newPersistentFile.jpg", { create: true, exclusive: false }, function (fileEntry) {
-
-        console.log("fileEntry is file?" + fileEntry.isFile.toString());
-        // fileEntry.name == 'someFile.txt'
-        // fileEntry.fullPath == '/someFile.txt'
-        writeFile(fileEntry, null);
-
-    }, onErrorCreateFile);
-
-}, onErrorLoadFs);
+function getFileCallback2(entry){
+  var image = document.getElementById('myImage5');
+  image.src = "newPersistentFile.txt";
 }
  
+
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemCallback, onError);
 
 function onError(msg){

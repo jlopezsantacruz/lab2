@@ -1,10 +1,10 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "helloworld",
-  "short_name": "helloworld",
+  "name": "lab2 javier",
+  "short_name": "lab2 javier",
   "version": "com.phonegap.helloworld",
-  "description": "A basic Framework7 template for PhoneGap.",
+  "description": "Lab 2 Javier",
   "author": "Apache Cordova Team",
   "icons": [],
   "start_url": "index.html",
